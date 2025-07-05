@@ -34,6 +34,35 @@
             padding: 0 20px;
         }
         
+        /* Disclaimer Styling */
+        .disclaimer {
+            background-color: #FFF3E0;
+            padding: 15px 0;
+            border-bottom: 1px solid #FFE0B2;
+        }
+        
+        .disclaimer-box {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px;
+            background-color: #FFF8E1;
+            border-radius: 8px;
+            border-left: 4px solid #FFA000;
+        }
+        
+        .disclaimer-box i {
+            color: #FF6D00;
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+        
+        .disclaimer-box p {
+            margin: 0;
+            color: #5D4037;
+            font-size: 14px;
+        }
+        
         /* Language Selector */
         .language-selector {
             position: absolute;
@@ -43,7 +72,7 @@
         
         .language-dropdown {
             background: rgba(255, 255, 255, 0.2);
-            color: #000; /* Changed from white to black */
+            color: #000;
             border: 1px solid rgba(255, 255, 255, 0.3);
             padding: 8px 15px;
             border-radius: 4px;
@@ -580,10 +609,20 @@
     
     <section class="hero" id="home">
         <div class="container hero-content">
-            <h1>Access Government Benefits for Scheduled Castes in Maharashtra</h1>
-            <p>Discover and apply for hundreds of schemes designed for education, entrepreneurship, housing, healthcare and more.</p>
+            <h1>Government Benefits for Scheduled Castes in Maharashtra</h1>
+            <p>Explore hundreds of schemes designed for education, entrepreneurship, housing, healthcare, and more.</p>
             <a href="#eligibility" class="btn">Check Eligibility</a>
-            <a href="#schemes" class="btn btn-outline">Explore Schemes</a>
+            <a href="#schemes" class="btn btn-outline">View All Schemes</a>
+        </div>
+    </section>
+
+    <!-- Disclaimer Section -->
+    <section class="disclaimer">
+        <div class="container">
+            <div class="disclaimer-box">
+                <i class="fas fa-info-circle"></i>
+                <p><strong>Disclaimer:</strong> This is an independent effort to compile information about SC welfare schemes in Maharashtra. This is <u>not an official government website</u>. For accurate details and applications, always refer to the linked official sources. Personal verification of scheme details is recommended.</p>
+            </div>
         </div>
     </section>
     
@@ -596,26 +635,26 @@
                 <div class="link-card">
                     <i class="fas fa-graduation-cap"></i>
                     <h3>Education</h3>
-                    <p>Scholarships, freeships and coaching for SC students</p>
-                    <a href="#education-schemes" class="btn">View Schemes</a>
+                    <p>Scholarships, freeships, and coaching for SC students</p>
+                    <a href="https://socialjustice.gov.in/schemes/6" target="_blank" class="btn">Learn More</a>
                 </div>
                 <div class="link-card">
                     <i class="fas fa-business-time"></i>
                     <h3>Entrepreneurship</h3>
                     <p>Loans and subsidies for SC business owners</p>
-                    <a href="#entrepreneurship-schemes" class="btn">View Schemes</a>
+                    <a href="https://www.scsthub.in/" target="_blank" class="btn">Learn More</a>
                 </div>
                 <div class="link-card">
                     <i class="fas fa-home"></i>
                     <h3>Housing</h3>
                     <p>Affordable housing schemes for SC families</p>
-                    <a href="#housing-schemes" class="btn">View Schemes</a>
+                    <a href="https://pmaymis.gov.in/" target="_blank" class="btn">Learn More</a>
                 </div>
                 <div class="link-card">
                     <i class="fas fa-heartbeat"></i>
                     <h3>Healthcare</h3>
                     <p>Medical assistance and insurance schemes</p>
-                    <a href="#healthcare-schemes" class="btn">View Schemes</a>
+                    <a href="https://pmjay.gov.in/" target="_blank" class="btn">Learn More</a>
                 </div>
             </div>
         </div>
@@ -733,7 +772,7 @@
                             <span class="scheme-tag">Maharashtra Domicile</span>
                             <span class="scheme-tag">Full-time courses</span>
                         </div>
-                        <a href="#" class="btn" style="margin-top: 15px; display: inline-block;">Learn More</a>
+                        <a href="https://socialjustice.gov.in/schemes/6" target="_blank" class="btn" style="margin-top: 15px; display: inline-block;">Learn More</a>
                     </div>
                 </div>
                 
@@ -753,7 +792,7 @@
                             <span class="scheme-tag">60% in last degree</span>
                             <span class="scheme-tag">Age ≤ 35 years</span>
                         </div>
-                        <a href="#" class="btn" style="margin-top: 15px; display: inline-block;">Learn More</a>
+                        <a href="https://socialjustice.gov.in/schemes/7" target="_blank" class="btn" style="margin-top: 15px; display: inline-block;">Learn More</a>
                     </div>
                 </div>
                 
@@ -773,7 +812,7 @@
                             <span class="scheme-tag">Professional courses</span>
                             <span class="scheme-tag">Approved institutes</span>
                         </div>
-                        <a href="#" class="btn" style="margin-top: 15px; display: inline-block;">Learn More</a>
+                        <a href="https://mahadbt.gov.in/SchemeData/SchemeData?str=E9DDFA703C38E51D9D3267C81D40D0B1" target="_blank" class="btn" style="margin-top: 15px; display: inline-block;">Learn More</a>
                     </div>
                 </div>
                 
@@ -794,7 +833,7 @@
                             <span class="scheme-tag">Urban: ₹2.5L</span>
                             <span class="scheme-tag">No existing pucca house</span>
                         </div>
-                        <a href="#" class="btn" style="margin-top: 15px; display: inline-block;">Learn More</a>
+                        <a href="https://mhada.maharashtra.gov.in/en/ramai-awas-yojana" target="_blank" class="btn" style="margin-top: 15px; display: inline-block;">Learn More</a>
                     </div>
                 </div>
                 
@@ -814,7 +853,7 @@
                             <span class="scheme-tag">Interest subsidy</span>
                             <span class="scheme-tag">Women ownership</span>
                         </div>
-                        <a href="#" class="btn" style="margin-top: 15px; display: inline-block;">Learn More</a>
+                        <a href="https://pmaymis.gov.in/" target="_blank" class="btn" style="margin-top: 15px; display: inline-block;">Learn More</a>
                     </div>
                 </div>
                 
@@ -835,7 +874,7 @@
                             <span class="scheme-tag">35% subsidy</span>
                             <span class="scheme-tag">Age 21-45 years</span>
                         </div>
-                        <a href="#" class="btn" style="margin-top: 15px; display: inline-block;">Learn More</a>
+                        <a href="https://socialjustice.maharashtra.gov.in/en/schemes" target="_blank" class="btn" style="margin-top: 15px; display: inline-block;">Learn More</a>
                     </div>
                 </div>
                 
@@ -855,7 +894,7 @@
                             <span class="scheme-tag">Up to ₹50L support</span>
                             <span class="scheme-tag">Business advisory</span>
                         </div>
-                        <a href="#" class="btn" style="margin-top: 15px; display: inline-block;">Learn More</a>
+                        <a href="https://www.scsthub.in/" target="_blank" class="btn" style="margin-top: 15px; display: inline-block;">Learn More</a>
                     </div>
                 </div>
                 
@@ -876,7 +915,7 @@
                             <span class="scheme-tag">Serious illnesses</span>
                             <span class="scheme-tag">Govt. recognized hospitals</span>
                         </div>
-                        <a href="#" class="btn" style="margin-top: 15px; display: inline-block;">Learn More</a>
+                        <a href="https://socialjustice.maharashtra.gov.in/en/schemes" target="_blank" class="btn" style="margin-top: 15px; display: inline-block;">Learn More</a>
                     </div>
                 </div>
                 
@@ -896,7 +935,7 @@
                             <span class="scheme-tag">Cashless treatment</span>
                             <span class="scheme-tag">1500+ procedures covered</span>
                         </div>
-                        <a href="#" class="btn" style="margin-top: 15px; display: inline-block;">Learn More</a>
+                        <a href="https://pmjay.gov.in/" target="_blank" class="btn" style="margin-top: 15px; display: inline-block;">Learn More</a>
                     </div>
                 </div>
             </div>
@@ -908,7 +947,7 @@
             <div class="footer-content">
                 <div class="footer-column">
                     <h3>Maharashtra SC Welfare</h3>
-                    <p>Your comprehensive guide to government benefits for Scheduled Caste communities in Maharashtra.</p>
+                    <p>An independent resource for SC welfare scheme information in Maharashtra.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
@@ -953,20 +992,20 @@
                 home: "Home",
                 schemes: "Schemes",
                 eligibility: "Eligibility",
-                heroTitle: "Access Government Benefits for Scheduled Castes in Maharashtra",
-                heroText: "Discover and apply for hundreds of schemes designed for education, entrepreneurship, housing, healthcare and more.",
+                heroTitle: "Government Benefits for Scheduled Castes in Maharashtra",
+                heroText: "Explore hundreds of schemes designed for education, entrepreneurship, housing, healthcare, and more.",
                 checkEligibility: "Check Eligibility",
-                exploreSchemes: "Explore Schemes",
+                exploreSchemes: "View All Schemes",
                 quickAccess: "Quick Access",
                 education: "Education",
-                educationDesc: "Scholarships, freeships and coaching for SC students",
+                educationDesc: "Scholarships, freeships, and coaching for SC students",
                 entrepreneurship: "Entrepreneurship",
                 entrepreneurshipDesc: "Loans and subsidies for SC business owners",
                 housing: "Housing",
                 housingDesc: "Affordable housing schemes for SC families",
                 healthcare: "Healthcare",
                 healthcareDesc: "Medical assistance and insurance schemes",
-                viewSchemes: "View Schemes",
+                viewSchemes: "Learn More",
                 amIEligible: "Am I Eligible?",
                 schemeType: "Scheme Type",
                 selectSchemeType: "Select Scheme Type",
@@ -1002,10 +1041,10 @@
                 home: "मुख्यपृष्ठ",
                 schemes: "योजना",
                 eligibility: "पात्रता",
-                heroTitle: "महाराष्ट्रातील अनुसूचित जातींसाठी सरकारी लाभ मिळवा",
-                heroText: "शिक्षण, उद्योजकता, गृहनिर्माण, आरोग्यसेवा आणि इतर अनेक क्षेत्रांसाठीच्या शेकडो योजना शोधा आणि अर्ज करा.",
+                heroTitle: "महाराष्ट्रातील अनुसूचित जातींसाठी सरकारी लाभ",
+                heroText: "शिक्षण, उद्योजकता, गृहनिर्माण, आरोग्यसेवा आणि इतर अनेक क्षेत्रांसाठीच्या शेकडो योजना शोधा.",
                 checkEligibility: "पात्रता तपासा",
-                exploreSchemes: "योजना शोधा",
+                exploreSchemes: "सर्व योजना पहा",
                 quickAccess: "द्रुत प्रवेश",
                 education: "शिक्षण",
                 educationDesc: "अनुसूचित जातीतील विद्यार्थ्यांसाठी शिष्यवृत्ती, फीसhips आणि कोचिंग",
@@ -1015,7 +1054,7 @@
                 housingDesc: "अनुसूचित जातीतील कुटुंबांसाठी स्वस्त गृहनिर्माण योजना",
                 healthcare: "आरोग्यसेवा",
                 healthcareDesc: "वैद्यकीय मदत आणि विमा योजना",
-                viewSchemes: "योजना पहा",
+                viewSchemes: "अधिक जाणा",
                 amIEligible: "मी पात्र आहे का?",
                 schemeType: "योजनेचा प्रकार",
                 selectSchemeType: "योजनेचा प्रकार निवडा",
@@ -1051,10 +1090,10 @@
                 home: "होम",
                 schemes: "योजनाएं",
                 eligibility: "पात्रता",
-                heroTitle: "महाराष्ट्र में अनुसूचित जातियों के लिए सरकारी लाभ प्राप्त करें",
-                heroText: "शिक्षा, उद्यमिता, आवास, स्वास्थ्य सेवा और अन्य क्षेत्रों के लिए सैकड़ों योजनाओं को खोजें और आवेदन करें।",
+                heroTitle: "महाराष्ट्र में अनुसूचित जातियों के लिए सरकारी लाभ",
+                heroText: "शिक्षा, उद्यमिता, आवास, स्वास्थ्य सेवा और अन्य क्षेत्रों के लिए सैकड़ों योजनाओं को खोजें।",
                 checkEligibility: "पात्रता जांचें",
-                exploreSchemes: "योजनाएं देखें",
+                exploreSchemes: "सभी योजनाएं देखें",
                 quickAccess: "त्वरित पहुंच",
                 education: "शिक्षा",
                 educationDesc: "अनुसूचित जाति के छात्रों के लिए छात्रवृत्ति, फीस और कोचिंग",
@@ -1064,7 +1103,7 @@
                 housingDesc: "अनुसूचित जाति के परिवारों के लिए किफायती आवास योजनाएं",
                 healthcare: "स्वास्थ्य सेवा",
                 healthcareDesc: "चिकित्सा सहायता और बीमा योजनाएं",
-                viewSchemes: "योजनाएं देखें",
+                viewSchemes: "अधिक जानें",
                 amIEligible: "क्या मैं पात्र हूँ?",
                 schemeType: "योजना प्रकार",
                 selectSchemeType: "योजना प्रकार चुनें",
@@ -1100,10 +1139,10 @@
                 home: "હોમ",
                 schemes: "યોજનાઓ",
                 eligibility: "પાત્રતા",
-                heroTitle: "મહારાષ્ટ્રમાં અનુસૂચિત જાતિઓ માટે સરકારી લાભો મેળવો",
-                heroText: "શિક્ષણ, ઉદ્યોગસાહસિકતા, આવાસ, આરોગ્યસેવા અને અન્ય ક્ષેત્રો માટે સેંકડો યોજનાઓ શોધો અને અરજી કરો.",
+                heroTitle: "મહારાષ્ટ્રમાં અનુસૂચિત જાતિઓ માટે સરકારી લાભો",
+                heroText: "શિક્ષણ, ઉદ્યોગસાહસિકતા, આવાસ, આરોગ્યસેવા અને અન્ય ક્ષેત્રો માટે સેંકડો યોજનાઓ શોધો.",
                 checkEligibility: "પાત્રતા તપાસો",
-                exploreSchemes: "યોજનાઓ અન્વેષણ કરો",
+                exploreSchemes: "બધી યોજનાઓ જુઓ",
                 quickAccess: "ઝડપી પ્રવેશ",
                 education: "શિક્ષણ",
                 educationDesc: "અનુસૂચિત જાતિના વિદ્યાર્થીઓ માટે શિષ્યવૃત્તિ, ફીસhips અને કોચિંગ",
@@ -1113,7 +1152,7 @@
                 housingDesc: "અનુસૂચિત જાતિના પરિવારો માટે સસ્તી આવાસ યોજનાઓ",
                 healthcare: "આરોગ્યસેવા",
                 healthcareDesc: "મેડિકલ સહાય અને વીમા યોજનાઓ",
-                viewSchemes: "યોજનાઓ જુઓ",
+                viewSchemes: "વધુ જાણો",
                 amIEligible: "શું હું પાત્ર છું?",
                 schemeType: "યોજના પ્રકાર",
                 selectSchemeType: "યોજના પ્રકાર પસંદ કરો",
