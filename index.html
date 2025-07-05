@@ -1,0 +1,1390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maharashtra SC Welfare Portal | Government Benefits for SC Communities</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2B6CB0;
+            --secondary: #4299E1;
+            --accent: #ED8936;
+            --light: #F7FAFC;
+            --dark: #1A202C;
+            --success: #48BB78;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark);
+            line-height: 1.6;
+            background-color: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Language Selector */
+        .language-selector {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+        }
+        
+        .language-dropdown {
+            background: rgba(255, 255, 255, 0.2);
+            color: #000; /* Changed from white to black */
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+        
+        .language-dropdown:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 15px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+        }
+        
+        .logo span {
+            color: var(--accent);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        nav ul li a:hover {
+            color: var(--accent);
+        }
+        
+        .mobile-menu {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(0, 87, 184, 0.8), rgba(255, 215, 0, 0.7)), 
+                        url('https://images.unsplash.com/photo-1601758003122-53c40e686a19?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            height: 400px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            color: white;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 600px;
+        }
+        
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: #DD6B20;
+            transform: translateY(-2px);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid white;
+            margin-left: 15px;
+        }
+        
+        .btn-outline:hover {
+            background-color: white;
+            color: var(--primary);
+        }
+        
+        /* Quick Links */
+        .quick-links {
+            padding: 60px 0;
+            background-color: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .section-title h2 {
+            font-size: 32px;
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+        
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .link-card {
+            background-color: var(--light);
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .link-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .link-card i {
+            font-size: 40px;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .link-card h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        .link-card p {
+            color: #4A5568;
+            margin-bottom: 20px;
+        }
+        
+        /* Eligibility Checker */
+        .eligibility {
+            padding: 60px 0;
+            background-color: var(--light);
+        }
+        
+        .checker-form {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #CBD5E0;
+            border-radius: 5px;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .form-row {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .form-row .form-group {
+            flex: 1;
+        }
+        
+        /* Income input with buttons */
+        .income-input-container {
+            display: flex;
+            align-items: center;
+        }
+        
+        .income-input-container input {
+            flex: 1;
+        }
+        
+        .income-btn {
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+        
+        .income-btn:hover {
+            background-color: var(--secondary);
+        }
+        
+        /* Schemes Section */
+        .schemes {
+            padding: 60px 0;
+            background-color: white;
+        }
+        
+        .schemes-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .tab-btn {
+            padding: 10px 25px;
+            background-color: white;
+            border: 1px solid #CBD5E0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .tab-btn:first-child {
+            border-radius: 5px 0 0 5px;
+        }
+        
+        .tab-btn:last-child {
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .tab-btn.active {
+            background-color: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+        
+        .schemes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .scheme-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border: 1px solid #E2E8F0;
+        }
+        
+        .scheme-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .scheme-img {
+            height: 180px;
+            background-color: #E2E8F0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 40px;
+        }
+        
+        .scheme-content {
+            padding: 25px;
+        }
+        
+        .scheme-content h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        .scheme-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            color: #718096;
+            font-size: 14px;
+        }
+        
+        .scheme-content p {
+            color: #4A5568;
+            margin-bottom: 20px;
+        }
+        
+        .scheme-tag {
+            display: inline-block;
+            padding: 5px 10px;
+            background-color: var(--light);
+            color: var(--primary);
+            border-radius: 5px;
+            font-size: 12px;
+            font-weight: 500;
+            margin-right: 8px;
+            margin-bottom: 8px;
+        }
+        
+        /* Results Section */
+        .results {
+            padding: 60px 0;
+            background-color: white;
+            display: none;
+        }
+        
+        .result-card {
+            background-color: var(--light);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .result-card h3 {
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        .result-card p {
+            margin-bottom: 5px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 60px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--accent);
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column ul li a {
+            color: #CBD5E0;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-column ul li a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--accent);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #A0AEC0;
+            font-size: 14px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content nav {
+                display: none;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .hero {
+                height: 350px;
+            }
+            
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .hero p {
+                font-size: 16px;
+            }
+            
+            .btn {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+            
+            .section-title h2 {
+                font-size: 28px;
+            }
+            
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+            
+            .language-selector {
+                position: static;
+                justify-content: center;
+                margin-top: 10px;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo">Maharashtra<span>SC</span>Welfare</div>
+            <div class="language-selector">
+                <select class="language-dropdown" id="languageSelect">
+                    <option value="en">English</option>
+                    <option value="mr">मराठी</option>
+                    <option value="hi">हिंदी</option>
+                    <option value="gu">ગુજરાતી</option>
+                </select>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#schemes">Schemes</a></li>
+                    <li><a href="#eligibility">Eligibility</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+    
+    <section class="hero" id="home">
+        <div class="container hero-content">
+            <h1>Access Government Benefits for Scheduled Castes in Maharashtra</h1>
+            <p>Discover and apply for hundreds of schemes designed for education, entrepreneurship, housing, healthcare and more.</p>
+            <a href="#eligibility" class="btn">Check Eligibility</a>
+            <a href="#schemes" class="btn btn-outline">Explore Schemes</a>
+        </div>
+    </section>
+    
+    <section class="quick-links">
+        <div class="container">
+            <div class="section-title">
+                <h2>Quick Access</h2>
+            </div>
+            <div class="links-grid">
+                <div class="link-card">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>Education</h3>
+                    <p>Scholarships, freeships and coaching for SC students</p>
+                    <a href="#education-schemes" class="btn">View Schemes</a>
+                </div>
+                <div class="link-card">
+                    <i class="fas fa-business-time"></i>
+                    <h3>Entrepreneurship</h3>
+                    <p>Loans and subsidies for SC business owners</p>
+                    <a href="#entrepreneurship-schemes" class="btn">View Schemes</a>
+                </div>
+                <div class="link-card">
+                    <i class="fas fa-home"></i>
+                    <h3>Housing</h3>
+                    <p>Affordable housing schemes for SC families</p>
+                    <a href="#housing-schemes" class="btn">View Schemes</a>
+                </div>
+                <div class="link-card">
+                    <i class="fas fa-heartbeat"></i>
+                    <h3>Healthcare</h3>
+                    <p>Medical assistance and insurance schemes</p>
+                    <a href="#healthcare-schemes" class="btn">View Schemes</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="eligibility" id="eligibility">
+        <div class="container">
+            <div class="section-title">
+                <h2>Am I Eligible?</h2>
+            </div>
+            <div class="checker-form">
+                <form id="eligibilityForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="schemeType">Scheme Type</label>
+                            <select id="schemeType" class="form-control" required>
+                                <option value="">Select Scheme Type</option>
+                                <option value="education">Education</option>
+                                <option value="entrepreneurship">Entrepreneurship</option>
+                                <option value="housing">Housing</option>
+                                <option value="healthcare">Healthcare</option>
+                                <option value="pension">Pension</option>
+                                <option value="employment">Employment</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="income">Annual Family Income (₹)</label>
+                            <div class="income-input-container">
+                                <input type="number" id="income" class="form-control" placeholder="Enter income" required>
+                                <button type="button" class="income-btn" id="decreaseIncome">-</button>
+                                <button type="button" class="income-btn" id="increaseIncome">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="location">Location</label>
+                            <select id="location" class="form-control" required>
+                                <option value="">Select Location</option>
+                                <option value="rural">Rural</option>
+                                <option value="urban">Urban</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="category">Category</label>
+                            <select id="category" class="form-control" required>
+                                <option value="sc">Scheduled Caste (SC)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Do you have these documents?</label>
+                        <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+                            <label style="display: flex; align-items: center; gap: 5px;">
+                                <input type="checkbox" id="casteCert"> Caste Certificate
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 5px;">
+                                <input type="checkbox" id="domicileCert"> Domicile Certificate
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 5px;">
+                                <input type="checkbox" id="incomeCert"> Income Certificate
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 5px;">
+                                <input type="checkbox" id="aadhar"> Aadhaar Card
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 5px;">
+                                <input type="checkbox" id="bankAccount"> Bank Account
+                            </label>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn" style="width: 100%;">Check Eligibility</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+    <section class="results" id="results">
+        <div class="container">
+            <div class="section-title">
+                <h2>Eligible Schemes</h2>
+                <p>Based on your information, here are the schemes you may qualify for:</p>
+            </div>
+            <div id="eligibleSchemes">
+                <!-- Results will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+    
+    <section class="schemes" id="schemes">
+        <div class="container">
+            <div class="section-title">
+                <h2>Popular Schemes</h2>
+                <p>Government welfare schemes for Scheduled Castes in Maharashtra</p>
+            </div>
+            <div class="schemes-tabs">
+                <div class="tab-btn active" data-category="all">All</div>
+                <div class="tab-btn" data-category="central">Central</div>
+                <div class="tab-btn" data-category="state">State</div>
+            </div>
+            <div class="schemes-grid" id="schemesContainer">
+                <!-- Education Schemes -->
+                <div class="scheme-card" data-category="central" data-scheme-type="education" id="education-schemes">
+                    <div class="scheme-img" style="background-color: #E6FFFA;">
+                        <i class="fas fa-book-open" style="color: #38B2AC;"></i>
+                    </div>
+                    <div class="scheme-content">
+                        <div class="scheme-meta">
+                            <span>Education</span>
+                            <span>Central</span>
+                        </div>
+                        <h3>Post-Matric Scholarship (PMS-SC)</h3>
+                        <p>Financial support for SC students pursuing education after Class 10, covering tuition fees and providing maintenance allowance.</p>
+                        <div>
+                            <span class="scheme-tag">Income ≤ ₹2.5L</span>
+                            <span class="scheme-tag">Maharashtra Domicile</span>
+                            <span class="scheme-tag">Full-time courses</span>
+                        </div>
+                        <a href="#" class="btn" style="margin-top: 15px; display: inline-block;">Learn More</a>
+                    </div>
+                </div>
+                
+                <div class="scheme-card" data-category="central" data-scheme-type="education">
+                    <div class="scheme-img" style="background-color: #EBF8FF;">
+                        <i class="fas fa-plane" style="color: #4299E1;"></i>
+                    </div>
+                    <div class="scheme-content">
+                        <div class="scheme-meta">
+                            <span>Education</span>
+                            <span>Central</span>
+                        </div>
+                        <h3>National Overseas Scholarship</h3>
+                        <p>Financial support for SC students to pursue Master's or PhD at top 500 global universities.</p>
+                        <div>
+                            <span class="scheme-tag">Income ≤ ₹8L</span>
+                            <span class="scheme-tag">60% in last degree</span>
+                            <span class="scheme-tag">Age ≤ 35 years</span>
+                        </div>
+                        <a href="#" class="btn" style="margin-top: 15px; display: inline-block;">Learn More</a>
+                    </div>
+                </div>
+                
+                <div class="scheme-card" data-category="state" data-scheme-type="education">
+                    <div class="scheme-img" style="background-color: #FEFCBF;">
+                        <i class="fas fa-chalkboard-teacher" style="color: #B7791F;"></i>
+                    </div>
+                    <div class="scheme-content">
+                        <div class="scheme-meta">
+                            <span>Education</span>
+                            <span>State</span>
+                        </div>
+                        <h3>Rajarshi Chhatrapati Shahu Maharaj Shikshan Shulkh Shishyavrutti Yojana</h3>
+                        <p>Fee reimbursement for SC students pursuing professional courses in Maharashtra.</p>
+                        <div>
+                            <span class="scheme-tag">Income ≤ ₹8L</span>
+                            <span class="scheme-tag">Professional courses</span>
+                            <span class="scheme-tag">Approved institutes</span>
+                        </div>
+                        <a href="#" class="btn" style="margin-top: 15px; display: inline-block;">Learn More</a>
+                    </div>
+                </div>
+                
+                <!-- Housing Schemes -->
+                <div class="scheme-card" data-category="state" data-scheme-type="housing" id="housing-schemes">
+                    <div class="scheme-img" style="background-color: #FFF5F5;">
+                        <i class="fas fa-home" style="color: #F56565;"></i>
+                    </div>
+                    <div class="scheme-content">
+                        <div class="scheme-meta">
+                            <span>Housing</span>
+                            <span>State</span>
+                        </div>
+                        <h3>Ramai Awas Yojana</h3>
+                        <p>Financial assistance for homeless SC families to construct permanent houses in rural and urban areas.</p>
+                        <div>
+                            <span class="scheme-tag">Rural: ₹1.32L</span>
+                            <span class="scheme-tag">Urban: ₹2.5L</span>
+                            <span class="scheme-tag">No existing pucca house</span>
+                        </div>
+                        <a href="#" class="btn" style="margin-top: 15px; display: inline-block;">Learn More</a>
+                    </div>
+                </div>
+                
+                <div class="scheme-card" data-category="central" data-scheme-type="housing">
+                    <div class="scheme-img" style="background-color: #FAF5FF;">
+                        <i class="fas fa-building" style="color: #9F7AEA;"></i>
+                    </div>
+                    <div class="scheme-content">
+                        <div class="scheme-meta">
+                            <span>Housing</span>
+                            <span>Central</span>
+                        </div>
+                        <h3>Pradhan Mantri Awas Yojana (PMAY)</h3>
+                        <p>Credit linked subsidy scheme for SC families to construct or purchase houses.</p>
+                        <div>
+                            <span class="scheme-tag">EWS/LIG categories</span>
+                            <span class="scheme-tag">Interest subsidy</span>
+                            <span class="scheme-tag">Women ownership</span>
+                        </div>
+                        <a href="#" class="btn" style="margin-top: 15px; display: inline-block;">Learn More</a>
+                    </div>
+                </div>
+                
+                <!-- Entrepreneurship Schemes -->
+                <div class="scheme-card" data-category="state" data-scheme-type="entrepreneurship" id="entrepreneurship-schemes">
+                    <div class="scheme-img" style="background-color: #E6FFFA;">
+                        <i class="fas fa-hand-holding-usd" style="color: #38B2AC;"></i>
+                    </div>
+                    <div class="scheme-content">
+                        <div class="scheme-meta">
+                            <span>Entrepreneurship</span>
+                            <span>State</span>
+                        </div>
+                        <h3>Maharashtra SC Entrepreneurship Scheme</h3>
+                        <p>Subsidy up to 35% for SC entrepreneurs to establish new businesses or expand existing ones.</p>
+                        <div>
+                            <span class="scheme-tag">Up to ₹50L project</span>
+                            <span class="scheme-tag">35% subsidy</span>
+                            <span class="scheme-tag">Age 21-45 years</span>
+                        </div>
+                        <a href="#" class="btn" style="margin-top: 15px; display: inline-block;">Learn More</a>
+                    </div>
+                </div>
+                
+                <div class="scheme-card" data-category="central" data-scheme-type="entrepreneurship">
+                    <div class="scheme-img" style="background-color: #EBF8FF;">
+                        <i class="fas fa-truck" style="color: #4299E1;"></i>
+                    </div>
+                    <div class="scheme-content">
+                        <div class="scheme-meta">
+                            <span>Entrepreneurship</span>
+                            <span>Central</span>
+                        </div>
+                        <h3>National SC/ST Hub</h3>
+                        <p>Support for SC entrepreneurs through capacity building, market linkages and financial assistance.</p>
+                        <div>
+                            <span class="scheme-tag">MSME registration</span>
+                            <span class="scheme-tag">Up to ₹50L support</span>
+                            <span class="scheme-tag">Business advisory</span>
+                        </div>
+                        <a href="#" class="btn" style="margin-top: 15px; display: inline-block;">Learn More</a>
+                    </div>
+                </div>
+                
+                <!-- Healthcare Schemes -->
+                <div class="scheme-card" data-category="state" data-scheme-type="healthcare" id="healthcare-schemes">
+                    <div class="scheme-img" style="background-color: #FFF5F5;">
+                        <i class="fas fa-ambulance" style="color: #F56565;"></i>
+                    </div>
+                    <div class="scheme-content">
+                        <div class="scheme-meta">
+                            <span>Healthcare</span>
+                            <span>State</span>
+                        </div>
+                        <h3>Dr. Ambedkar Medical Aid Scheme</h3>
+                        <p>Financial assistance up to ₹2 lakh for SC patients suffering from serious diseases.</p>
+                        <div>
+                            <span class="scheme-tag">Income ≤ ₹3L</span>
+                            <span class="scheme-tag">Serious illnesses</span>
+                            <span class="scheme-tag">Govt. recognized hospitals</span>
+                        </div>
+                        <a href="#" class="btn" style="margin-top: 15px; display: inline-block;">Learn More</a>
+                    </div>
+                </div>
+                
+                <div class="scheme-card" data-category="central" data-scheme-type="healthcare">
+                    <div class="scheme-img" style="background-color: #FAF5FF;">
+                        <i class="fas fa-heartbeat" style="color: #9F7AEA;"></i>
+                    </div>
+                    <div class="scheme-content">
+                        <div class="scheme-meta">
+                            <span>Healthcare</span>
+                            <span>Central</span>
+                        </div>
+                        <h3>Ayushman Bharat (PM-JAY)</h3>
+                        <p>Health insurance coverage of ₹5 lakh per family per year for secondary and tertiary care hospitalization.</p>
+                        <div>
+                            <span class="scheme-tag">No income limit</span>
+                            <span class="scheme-tag">Cashless treatment</span>
+                            <span class="scheme-tag">1500+ procedures covered</span>
+                        </div>
+                        <a href="#" class="btn" style="margin-top: 15px; display: inline-block;">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Maharashtra SC Welfare</h3>
+                    <p>Your comprehensive guide to government benefits for Scheduled Caste communities in Maharashtra.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#schemes">Schemes</a></li>
+                        <li><a href="#eligibility">Eligibility</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Important Links</h3>
+                    <ul>
+                        <li><a href="https://socialjustice.gov.in" target="_blank">Social Justice Department</a></li>
+                        <li><a href="https://mahadbt.gov.in" target="_blank">MahaDBT Portal</a></li>
+                        <li><a href="https://scholarships.gov.in" target="_blank">National Scholarship Portal</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> 1800-123-4567</li>
+                        <li><i class="fas fa-envelope"></i> help@mhscwelfare.gov.in</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Maharashtra SC Welfare Portal. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Language content for different languages
+        const languageContent = {
+            en: {
+                home: "Home",
+                schemes: "Schemes",
+                eligibility: "Eligibility",
+                heroTitle: "Access Government Benefits for Scheduled Castes in Maharashtra",
+                heroText: "Discover and apply for hundreds of schemes designed for education, entrepreneurship, housing, healthcare and more.",
+                checkEligibility: "Check Eligibility",
+                exploreSchemes: "Explore Schemes",
+                quickAccess: "Quick Access",
+                education: "Education",
+                educationDesc: "Scholarships, freeships and coaching for SC students",
+                entrepreneurship: "Entrepreneurship",
+                entrepreneurshipDesc: "Loans and subsidies for SC business owners",
+                housing: "Housing",
+                housingDesc: "Affordable housing schemes for SC families",
+                healthcare: "Healthcare",
+                healthcareDesc: "Medical assistance and insurance schemes",
+                viewSchemes: "View Schemes",
+                amIEligible: "Am I Eligible?",
+                schemeType: "Scheme Type",
+                selectSchemeType: "Select Scheme Type",
+                annualIncome: "Annual Family Income (₹)",
+                enterIncome: "Enter income",
+                location: "Location",
+                selectLocation: "Select Location",
+                rural: "Rural",
+                urban: "Urban",
+                category: "Category",
+                selectCategory: "Select Category",
+                sc: "Scheduled Caste (SC)",
+                documents: "Do you have these documents?",
+                casteCert: "Caste Certificate",
+                domicileCert: "Domicile Certificate",
+                incomeCert: "Income Certificate",
+                aadhar: "Aadhaar Card",
+                bankAccount: "Bank Account",
+                submit: "Check Eligibility",
+                eligibleSchemes: "Eligible Schemes",
+                eligibleSchemesDesc: "Based on your information, here are the schemes you may qualify for:",
+                noSchemes: "No Eligible Schemes Found",
+                noSchemesDesc: "Based on your inputs, we couldn't find any matching schemes.",
+                popularSchemes: "Popular Schemes",
+                popularSchemesDesc: "Government welfare schemes for Scheduled Castes in Maharashtra",
+                all: "All",
+                central: "Central",
+                state: "State",
+                learnMore: "Learn More",
+                selectAllFields: "Please fill all required fields"
+            },
+            mr: {
+                home: "मुख्यपृष्ठ",
+                schemes: "योजना",
+                eligibility: "पात्रता",
+                heroTitle: "महाराष्ट्रातील अनुसूचित जातींसाठी सरकारी लाभ मिळवा",
+                heroText: "शिक्षण, उद्योजकता, गृहनिर्माण, आरोग्यसेवा आणि इतर अनेक क्षेत्रांसाठीच्या शेकडो योजना शोधा आणि अर्ज करा.",
+                checkEligibility: "पात्रता तपासा",
+                exploreSchemes: "योजना शोधा",
+                quickAccess: "द्रुत प्रवेश",
+                education: "शिक्षण",
+                educationDesc: "अनुसूचित जातीतील विद्यार्थ्यांसाठी शिष्यवृत्ती, फीसhips आणि कोचिंग",
+                entrepreneurship: "उद्योजकता",
+                entrepreneurshipDesc: "अनुसूचित जातीतील व्यवसाय कर्त्यांसाठी कर्ज आणि अनुदान",
+                housing: "गृहनिर्माण",
+                housingDesc: "अनुसूचित जातीतील कुटुंबांसाठी स्वस्त गृहनिर्माण योजना",
+                healthcare: "आरोग्यसेवा",
+                healthcareDesc: "वैद्यकीय मदत आणि विमा योजना",
+                viewSchemes: "योजना पहा",
+                amIEligible: "मी पात्र आहे का?",
+                schemeType: "योजनेचा प्रकार",
+                selectSchemeType: "योजनेचा प्रकार निवडा",
+                annualIncome: "वार्षिक कुटुंब उत्पन्न (₹)",
+                enterIncome: "उत्पन्न प्रविष्ट करा",
+                location: "स्थान",
+                selectLocation: "स्थान निवडा",
+                rural: "ग्रामीण",
+                urban: "शहरी",
+                category: "वर्ग",
+                selectCategory: "वर्ग निवडा",
+                sc: "अनुसूचित जाती (SC)",
+                documents: "तुमच्याकडे ही कागदपत्रे आहेत का?",
+                casteCert: "जात प्रमाणपत्र",
+                domicileCert: "निवास प्रमाणपत्र",
+                incomeCert: "उत्पन्न प्रमाणपत्र",
+                aadhar: "आधार कार्ड",
+                bankAccount: "बँक खाते",
+                submit: "पात्रता तपासा",
+                eligibleSchemes: "पात्र योजना",
+                eligibleSchemesDesc: "तुमच्या माहितीवर आधारित, तुम्ही या योजनांसाठी पात्र असू शकता:",
+                noSchemes: "कोणत्याही पात्र योजना सापडल्या नाहीत",
+                noSchemesDesc: "तुमच्या माहितीवर आधारित, आम्हाला कोणत्याही जुळणाऱ्या योजना सापडल्या नाहीत.",
+                popularSchemes: "लोकप्रिय योजना",
+                popularSchemesDesc: "महाराष्ट्रातील अनुसूचित जातींसाठी सरकारी कल्याणकारी योजना",
+                all: "सर्व",
+                central: "केंद्र",
+                state: "राज्य",
+                learnMore: "अधिक जाणा",
+                selectAllFields: "कृपया सर्व आवश्यक फील्ड भरा"
+            },
+            hi: {
+                home: "होम",
+                schemes: "योजनाएं",
+                eligibility: "पात्रता",
+                heroTitle: "महाराष्ट्र में अनुसूचित जातियों के लिए सरकारी लाभ प्राप्त करें",
+                heroText: "शिक्षा, उद्यमिता, आवास, स्वास्थ्य सेवा और अन्य क्षेत्रों के लिए सैकड़ों योजनाओं को खोजें और आवेदन करें।",
+                checkEligibility: "पात्रता जांचें",
+                exploreSchemes: "योजनाएं देखें",
+                quickAccess: "त्वरित पहुंच",
+                education: "शिक्षा",
+                educationDesc: "अनुसूचित जाति के छात्रों के लिए छात्रवृत्ति, फीस और कोचिंग",
+                entrepreneurship: "उद्यमिता",
+                entrepreneurshipDesc: "अनुसूचित जाति के व्यवसायियों के लिए ऋण और सब्सिडी",
+                housing: "आवास",
+                housingDesc: "अनुसूचित जाति के परिवारों के लिए किफायती आवास योजनाएं",
+                healthcare: "स्वास्थ्य सेवा",
+                healthcareDesc: "चिकित्सा सहायता और बीमा योजनाएं",
+                viewSchemes: "योजनाएं देखें",
+                amIEligible: "क्या मैं पात्र हूँ?",
+                schemeType: "योजना प्रकार",
+                selectSchemeType: "योजना प्रकार चुनें",
+                annualIncome: "वार्षिक पारिवारिक आय (₹)",
+                enterIncome: "आय दर्ज करें",
+                location: "स्थान",
+                selectLocation: "स्थान चुनें",
+                rural: "ग्रामीण",
+                urban: "शहरी",
+                category: "श्रेणी",
+                selectCategory: "श्रेणी चुनें",
+                sc: "अनुसूचित जाति (SC)",
+                documents: "क्या आपके पास ये दस्तावेज़ हैं?",
+                casteCert: "जाति प्रमाण पत्र",
+                domicileCert: "निवास प्रमाण पत्र",
+                incomeCert: "आय प्रमाण पत्र",
+                aadhar: "आधार कार्ड",
+                bankAccount: "बैंक खाता",
+                submit: "पात्रता जांचें",
+                eligibleSchemes: "पात्र योजनाएं",
+                eligibleSchemesDesc: "आपकी जानकारी के आधार पर, आप इन योजनाओं के लिए पात्र हो सकते हैं:",
+                noSchemes: "कोई पात्र योजना नहीं मिली",
+                noSchemesDesc: "आपके द्वारा दी गई जानकारी के आधार पर, हमें कोई मिलान योजना नहीं मिली।",
+                popularSchemes: "लोकप्रिय योजनाएं",
+                popularSchemesDesc: "महाराष्ट्र में अनुसूचित जातियों के लिए सरकारी कल्याणकारी योजनाएं",
+                all: "सभी",
+                central: "केंद्र",
+                state: "राज्य",
+                learnMore: "अधिक जानें",
+                selectAllFields: "कृपया सभी आवश्यक फ़ील्ड भरें"
+            },
+            gu: {
+                home: "હોમ",
+                schemes: "યોજનાઓ",
+                eligibility: "પાત્રતા",
+                heroTitle: "મહારાષ્ટ્રમાં અનુસૂચિત જાતિઓ માટે સરકારી લાભો મેળવો",
+                heroText: "શિક્ષણ, ઉદ્યોગસાહસિકતા, આવાસ, આરોગ્યસેવા અને અન્ય ક્ષેત્રો માટે સેંકડો યોજનાઓ શોધો અને અરજી કરો.",
+                checkEligibility: "પાત્રતા તપાસો",
+                exploreSchemes: "યોજનાઓ અન્વેષણ કરો",
+                quickAccess: "ઝડપી પ્રવેશ",
+                education: "શિક્ષણ",
+                educationDesc: "અનુસૂચિત જાતિના વિદ્યાર્થીઓ માટે શિષ્યવૃત્તિ, ફીસhips અને કોચિંગ",
+                entrepreneurship: "ઉદ્યોગસાહસિકતા",
+                entrepreneurshipDesc: "અનુસૂચિત જાતિના વ્યવસાયીઓ માટે લોન અને સબ્સિડી",
+                housing: "આવાસ",
+                housingDesc: "અનુસૂચિત જાતિના પરિવારો માટે સસ્તી આવાસ યોજનાઓ",
+                healthcare: "આરોગ્યસેવા",
+                healthcareDesc: "મેડિકલ સહાય અને વીમા યોજનાઓ",
+                viewSchemes: "યોજનાઓ જુઓ",
+                amIEligible: "શું હું પાત્ર છું?",
+                schemeType: "યોજના પ્રકાર",
+                selectSchemeType: "યોજના પ્રકાર પસંદ કરો",
+                annualIncome: "વાર્ષિક પરિવારની આવક (₹)",
+                enterIncome: "આવક દાખલ કરો",
+                location: "સ્થાન",
+                selectLocation: "સ્થાન પસંદ કરો",
+                rural: "ગ્રામીણ",
+                urban: "શહેરી",
+                category: "શ્રેણી",
+                selectCategory: "શ્રેણી પસંદ કરો",
+                sc: "અનુસૂચિત જાતિ (SC)",
+                documents: "શું તમારી પાસે આ દસ્તાવેજો છે?",
+                casteCert: "જાતિ પ્રમાણપત્ર",
+                domicileCert: "ડોમિસાઇલ પ્રમાણપત્ર",
+                incomeCert: "આવક પ્રમાણપત્ર",
+                aadhar: "આધાર કાર્ડ",
+                bankAccount: "બેંક એકાઉન્ટ",
+                submit: "પાત્રતા તપાસો",
+                eligibleSchemes: "પાત્ર યોજનાઓ",
+                eligibleSchemesDesc: "તમારી માહિતીના આધારે, તમે આ યોજનાઓ માટે પાત્ર હોઈ શકો છો:",
+                noSchemes: "કોઈ પાત્ર યોજના મળી નથી",
+                noSchemesDesc: "તમારી ઇનપુટ્સના આધારે, અમને કોઈ મેળ ખાતી યોજના મળી નથી.",
+                popularSchemes: "લોકપ્રિય યોજનાઓ",
+                popularSchemesDesc: "મહારાષ્ટ્રમાં અનુસૂચિત જાતિઓ માટે સરકારી કલ્યાણકારી યોજનાઓ",
+                all: "બધા",
+                central: "કેન્દ્ર",
+                state: "રાજ્ય",
+                learnMore: "વધુ જાણો",
+                selectAllFields: "કૃપા કરીને બધી જરૂરી ફીલ્ડ્સ ભરો"
+            }
+        };
+
+        // Current language
+        let currentLanguage = 'en';
+
+        // Function to update content based on selected language
+        function updateContent(lang) {
+            currentLanguage = lang;
+            const content = languageContent[lang];
+            
+            // Update navigation
+            document.querySelectorAll('nav ul li a')[0].textContent = content.home;
+            document.querySelectorAll('nav ul li a')[1].textContent = content.schemes;
+            document.querySelectorAll('nav ul li a')[2].textContent = content.eligibility;
+            
+            // Update hero section
+            document.querySelector('.hero h1').textContent = content.heroTitle;
+            document.querySelector('.hero p').textContent = content.heroText;
+            document.querySelector('.hero .btn').textContent = content.checkEligibility;
+            document.querySelector('.hero .btn-outline').textContent = content.exploreSchemes;
+            
+            // Update quick access section
+            document.querySelector('.quick-links .section-title h2').textContent = content.quickAccess;
+            
+            const linkCards = document.querySelectorAll('.link-card');
+            linkCards[0].querySelector('h3').textContent = content.education;
+            linkCards[0].querySelector('p').textContent = content.educationDesc;
+            linkCards[0].querySelector('.btn').textContent = content.viewSchemes;
+            
+            linkCards[1].querySelector('h3').textContent = content.entrepreneurship;
+            linkCards[1].querySelector('p').textContent = content.entrepreneurshipDesc;
+            linkCards[1].querySelector('.btn').textContent = content.viewSchemes;
+            
+            linkCards[2].querySelector('h3').textContent = content.housing;
+            linkCards[2].querySelector('p').textContent = content.housingDesc;
+            linkCards[2].querySelector('.btn').textContent = content.viewSchemes;
+            
+            linkCards[3].querySelector('h3').textContent = content.healthcare;
+            linkCards[3].querySelector('p').textContent = content.healthcareDesc;
+            linkCards[3].querySelector('.btn').textContent = content.viewSchemes;
+            
+            // Update eligibility section
+            document.querySelector('.eligibility .section-title h2').textContent = content.amIEligible;
+            
+            const formGroups = document.querySelectorAll('.form-group');
+            formGroups[0].querySelector('label').textContent = content.schemeType;
+            formGroups[0].querySelector('option').textContent = content.selectSchemeType;
+            
+            formGroups[1].querySelector('label').textContent = content.annualIncome;
+            formGroups[1].querySelector('input').placeholder = content.enterIncome;
+            
+            formGroups[2].querySelector('label').textContent = content.location;
+            formGroups[2].querySelector('option').textContent = content.selectLocation;
+            formGroups[2].querySelectorAll('option')[1].textContent = content.rural;
+            formGroups[2].querySelectorAll('option')[2].textContent = content.urban;
+            
+            formGroups[3].querySelector('label').textContent = content.category;
+            formGroups[3].querySelector('option').textContent = content.sc;
+            
+            formGroups[4].querySelector('label').textContent = content.documents;
+            formGroups[4].querySelectorAll('label')[0].textContent = content.casteCert;
+            formGroups[4].querySelectorAll('label')[1].textContent = content.domicileCert;
+            formGroups[4].querySelectorAll('label')[2].textContent = content.incomeCert;
+            formGroups[4].querySelectorAll('label')[3].textContent = content.aadhar;
+            formGroups[4].querySelectorAll('label')[4].textContent = content.bankAccount;
+            
+            document.querySelector('.eligibility .btn').textContent = content.submit;
+            
+            // Update results section
+            document.querySelector('.results .section-title h2').textContent = content.eligibleSchemes;
+            document.querySelector('.results .section-title p').textContent = content.eligibleSchemesDesc;
+            
+            // Update schemes section
+            document.querySelector('.schemes .section-title h2').textContent = content.popularSchemes;
+            document.querySelector('.schemes .section-title p').textContent = content.popularSchemesDesc;
+            
+            const tabBtns = document.querySelectorAll('.tab-btn');
+            tabBtns[0].textContent = content.all;
+            tabBtns[1].textContent = content.central;
+            tabBtns[2].textContent = content.state;
+            
+            document.querySelectorAll('.scheme-card .btn').forEach(btn => {
+                btn.textContent = content.learnMore;
+            });
+        }
+
+        // Language selector functionality
+        const languageSelect = document.getElementById('languageSelect');
+        languageSelect.addEventListener('change', (e) => {
+            const selectedLanguage = e.target.value;
+            updateContent(selectedLanguage);
+        });
+
+        // Simple tab functionality
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const schemesContainer = document.getElementById('schemesContainer');
+        const schemeCards = document.querySelectorAll('.scheme-card');
+        
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                tabBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                const category = btn.getAttribute('data-category');
+                
+                schemeCards.forEach(card => {
+                    if (category === 'all' || card.getAttribute('data-category') === category) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+        
+        // Mobile menu toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu');
+        const nav = document.querySelector('header nav');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            nav.style.display = nav.style.display === 'block' ? 'none' : 'block';
+        });
+        
+        // Form submission
+        const form = document.getElementById('eligibilityForm');
+        const resultsSection = document.querySelector('.results');
+        const eligibleSchemesContainer = document.getElementById('eligibleSchemes');
+        
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Get form values
+            const schemeType = document.getElementById('schemeType').value;
+            const income = parseInt(document.getElementById('income').value) || 0;
+            const location = document.getElementById('location').value;
+            const hasCasteCert = document.getElementById('casteCert').checked;
+            const hasDomicileCert = document.getElementById('domicileCert').checked;
+            const hasIncomeCert = document.getElementById('incomeCert').checked;
+            const hasAadhar = document.getElementById('aadhar').checked;
+            const hasBankAccount = document.getElementById('bankAccount').checked;
+            
+            // Basic validation
+            if (!schemeType || !location) {
+                alert(languageContent[currentLanguage].selectAllFields || 'Please fill all required fields');
+                return;
+            }
+            
+            // Determine eligible schemes based on inputs
+            let eligibleSchemes = [];
+            
+            schemeCards.forEach(card => {
+                const cardType = card.getAttribute('data-scheme-type');
+                const tags = card.querySelectorAll('.scheme-tag');
+                
+                let isEligible = true;
+                
+                // Check scheme type match if specific type selected
+                if (schemeType !== '' && cardType !== schemeType) {
+                    isEligible = false;
+                }
+                
+                // Check income requirements
+                tags.forEach(tag => {
+                    if (tag.textContent.includes('Income ≤')) {
+                        const maxIncome = parseInt(tag.textContent.match(/≤ ₹(\d+\.?\d*)/)[1].replace('L', '00000'));
+                        if (income > maxIncome) {
+                            isEligible = false;
+                        }
+                    }
+                });
+                
+                // Check document requirements
+                if (!hasCasteCert || !hasAadhar || !hasBankAccount) {
+                    isEligible = false;
+                }
+                
+                if (isEligible) {
+                    eligibleSchemes.push(card.cloneNode(true));
+                }
+            });
+            
+            // Display results
+            if (eligibleSchemes.length > 0) {
+                eligibleSchemesContainer.innerHTML = '';
+                eligibleSchemes.forEach(scheme => {
+                    eligibleSchemesContainer.appendChild(scheme);
+                });
+                
+                resultsSection.style.display = 'block';
+                window.location.hash = 'results';
+            } else {
+                const content = languageContent[currentLanguage];
+                eligibleSchemesContainer.innerHTML = `
+                    <div class="result-card">
+                        <h3>${content.noSchemes}</h3>
+                        <p>${content.noSchemesDesc}</p>
+                    </div>
+                `;
+                resultsSection.style.display = 'block';
+                window.location.hash = 'results';
+            }
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (nav.style.display === 'block') {
+                        nav.style.display = 'none';
+                    }
+                }
+            });
+        });
+
+        // Income input buttons functionality
+        const incomeInput = document.getElementById('income');
+        const decreaseBtn = document.getElementById('decreaseIncome');
+        const increaseBtn = document.getElementById('increaseIncome');
+        
+        decreaseBtn.addEventListener('click', () => {
+            let currentValue = parseInt(incomeInput.value) || 0;
+            incomeInput.value = Math.max(0, currentValue - 50000);
+        });
+        
+        increaseBtn.addEventListener('click', () => {
+            let currentValue = parseInt(incomeInput.value) || 0;
+            incomeInput.value = currentValue + 50000;
+        });
+    </script>
+</body>
+</html>
